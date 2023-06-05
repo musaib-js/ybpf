@@ -1,0 +1,341 @@
+{% extends 'base.html' %} {% block title %}Youth Build and Peace Foundation |
+Home{% endblock title %} {% block body %}
+<main>
+  <!-- slider Area Start-->
+  <div class="slider-area">
+    <div class="slider-active">
+      <!-- Single Slider -->
+      <div class="single-slider slider-height d-flex align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10">
+              <div class="hero__caption">
+                <h1 data-animation="fadeInUp" data-delay=".6s">
+                  Youth Build and <br />
+                  Foundation Trust
+                </h1>
+                <p data-animation="fadeInUp" data-delay=".8s">
+                  Youth Building and Peace Foundation trust is registered under
+                  NITI AAYOG and was incorporated on 22 Jan. 2021
+                </p>
+                <!-- Hero-btn -->
+                <div class="hero__btn">
+                  <a
+                    href="/about"
+                    class="btn hero-btn mb-10"
+                    data-animation="fadeInLeft"
+                    data-delay=".8s"
+                    >Know about YBPF</a
+                  >
+                  <a
+                    href="industries.html"
+                    class="cal-btn ml-15"
+                    data-animation="fadeInRight"
+                    data-delay="1.0s"
+                  >
+                    <i class="flaticon-null"></i>
+                    <p>+91 9541483162</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- slider Area End-->
+  <!--? Services Area Start -->
+  <div class="service-area section-padding30">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">
+          <!-- Section Tittle -->
+          <div class="section-tittle text-center mb-80">
+            <span>Our Objectives</span>
+            <h2>We Are In A Mission To Help The Society</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="single-cat text-center mb-50">
+            <div class="cat-icon">
+              <span class="flaticon-null-1"></span>
+            </div>
+            <div class="cat-cap">
+              <h5><a href="services.html">Ambulance Services</a></h5>
+              <p>
+                YBPF provides ambulance services to the inaccessible and the
+                remote areas.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="single-cat active text-center mb-50">
+            <div class="cat-icon">
+              <span class="flaticon-think"></span>
+            </div>
+            <div class="cat-cap">
+              <h5><a href="services.html">Mental Health</a></h5>
+              <p>
+                Mental Health by establishing drug de addiction , counseling
+                centers
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="single-cat text-center mb-50">
+            <div class="cat-icon">
+              <span class="flaticon-gear"></span>
+            </div>
+            <div class="cat-cap">
+              <h5><a href="services.html">Medical Help</a></h5>
+              <p>
+                Multispecialty polyclinic and diagnostic for needy people.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container text-center">
+         <a href = "/about"><button class = "btn"> See More </button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Services Area End -->
+  <!--? About Law Start-->
+  <section class="about-low-area section-padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-10">
+          <div class="about-caption mb-50">
+            <!-- Section Tittle -->
+            <div class="section-tittle mb-35">
+              <span>About YBPF</span>
+              <h2>We Are In A Mission To Help Helpless</h2>
+            </div>
+            <p>
+              Youth Building and Peace Foundation trust is registered under NITI AAYOG and was
+              incorporated on 22 Jan. 2021
+            </p>
+            <p>
+              Follow our social handles to know more about us. Click below to know more
+            </p>
+          </div>
+          <a href="/about" class="btn">About US</a>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <!-- about-img -->
+          <div class="about-img">
+            <div class="about-font-img d-none d-lg-block">
+              <img src="/static/assets/img/gallery/about2.png" alt="" />
+            </div>
+            <div class="about-back-img">
+              <img src="/static/assets/img/gallery/about1.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Law End-->
+  <!-- Featured_job_start -->
+  <section
+    class="featured-job-area section-padding30 section-bg2"
+    data-background="/static/assets/img/gallery/section_bg03.png"
+  >
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-9 col-md-10 col-sm-12">
+          <!-- Section Tittle -->
+          <div class="section-tittle text-center mb-80">
+            <span>Recent Events</span>
+            <h2>Check out the events we conducted recently</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        {% for e in events %}
+        <div class="col-lg-9 col-md-12">
+          <!-- single-job-content -->
+          <div class="single-job-items mb-30">
+            <div class="job-items">
+              <div class="company-img">
+                <a href="/events/{{e.pk}}"
+                  ><img
+                    src="/media/{{e.thumbnail}}"
+                    alt=""
+                    width = "100"
+                /></a>
+              </div>
+              <div class="job-tittle">
+                <a href="/events/{{e.pk}}"><h4>{{e.title}}</h4></a>
+                <ul>
+                  <li><i class="far fa-clock"></i>{{e.timestamp}}</li>
+                  <li><i class="fas fa-map-marker-alt"></i>{{e.venue}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- Featured_job_end -->
+  <!-- Want To work -->
+  <section class="wantToWork-area">
+    <div class="container">
+      <div
+        class="wants-wrapper w-padding2 section-bg"
+        data-background="/static/assets/img/gallery/section_bg01.png"
+      >
+        <div class="row align-items-center justify-content-between">
+          <div class="col-xl-5 col-lg-9 col-md-8">
+            <div class="wantToWork-caption wantToWork-caption2">
+              <h2>Lets Change The World With Humanity</h2>
+            </div>
+          </div>
+          <div class="col-xl-2 col-lg-3 col-md-4">
+            <a href="/contact" class="btn white-btn f-right sm-left"
+              >Become A Volunteer</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Want To work End -->
+  <!--? Testimonial Start -->
+  <div class="testimonial-area testimonial-padding">
+    <div class="container">
+      <div class="section-tittle text-center mb-80">
+        <span>Our Team</span>
+        <h2>People Behind YBPF</h2>
+      </div>
+      <!-- Testimonial contents -->
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-8 col-lg-8 col-md-10">
+          <div class="h1-testimonial-active dot-style">
+            <!-- Single Testimonial -->
+            {% for t in team %}
+            <div class="single-testimonial text-center">
+              <div class="testimonial-caption">
+                <!-- founder -->
+                <div class="testimonial-founder">
+                  <div class="founder-img mb-40">
+                    <img
+                      src="/media/{{t.picture}}"
+                      alt=""
+                      width = "100"
+                    />
+                    <span>{{t.name}}</span>
+                    <p>{{t.designation}}</p>
+                  </div>
+                </div>
+                <div class="testimonial-top-cap">
+                  <p>{{t.bio}}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Testimonial End -->
+  <!--? Blog Area Start -->
+  <section class="home-blog-area section-padding30">
+    <div class="container">
+      <!-- Section Tittle -->
+      <div class="row justify-content-center">
+        <div class="col-xl-5 col-lg-6 col-md-9 col-sm-10">
+          <div class="section-tittle text-center mb-90">
+            <span>Our recent blog</span>
+            <h2>Checkout some recent posts by our experts</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        {% for p in posts %}
+        <div class="col-xl-6 col-lg-6 col-md-6">
+          <div class="home-blog-single mb-30">
+            <div class="blog-img-cap">
+              <div class="blog-img">
+                <img src="/media/{{p.image}}" height = "330" width = "100" alt="" />
+                <!-- Blog date -->
+                <div class="blog-date text-center">
+                  <span>{{p.timestamp}}</span>
+                </div>
+              </div>
+              <div class="blog-cap">
+                <p>{{p.author}}</p>
+                <h3>
+                  <a href="/blog/{{p.pk}}"
+                    >{{p.title}}</a
+                  >
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- Blog Area End -->
+  <!--? Count Down Start -->
+  <div
+    class="count-down-area pt-25 section-bg"
+    data-background="/static/assets/img/gallery/section_bg02.png"
+  >
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12 col-md-12">
+          <div class="count-down-wrapper">
+            <div class="row justify-content-between">
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <!-- Counter Up -->
+                <div class="single-counter text-center">
+                  <span class="counter color-green">50</span>
+                  <span class="plus">+</span>
+                  <p class="color-green">Events</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <!-- Counter Up -->
+                <div class="single-counter text-center">
+                  <span class="counter color-green">80</span>
+                  <span class="plus">+</span>
+                  <p class="color-green">People Joined</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <!-- Counter Up -->
+                <div class="single-counter text-center">
+                  <span class="counter color-green">10</span>
+                  <span class="plus">+</span>
+                  <p class="color-green">Districts Covered</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                <!-- Counter Up -->
+                <div class="single-counter text-center">
+                  <span class="counter color-green">256</span>
+                  <span class="plus">+</span>
+                  <p class="color-green">Schools Covered</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Count Down End -->
+</main>
+{% endblock body %}

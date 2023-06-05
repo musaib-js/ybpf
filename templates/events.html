@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% block title %}Our Events{% endblock title %}
+{% block body %}
+    <main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap hero-cap2 pt-20 text-center">
+                            <h2>YBPF Events </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Count Down Start -->
+    <div class="count-down-area pt-25 section-bg" data-background="/static/assets/img/gallery/section_bg02.png">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-12">
+                    <div class="count-down-wrapper" >
+                        <div class="row justify-content-between">
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <!-- Counter Up -->
+                                <div class="single-counter text-center">
+                                    <span class="counter color-green">50</span>
+                                    <span class="plus">+</span>
+                                    <p class="color-green">Events</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <!-- Counter Up -->
+                                <div class="single-counter text-center">
+                                    <span class="counter color-green">80</span>
+                                    <span class="plus">+</span>
+                                    <p class="color-green">Volunteers Joined</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <!-- Counter Up -->
+                                <div class="single-counter text-center">
+                                    <span class="counter color-green">10</span>
+                                    <span class="plus">+</span>
+                                    <p class="color-green">Districts Covered</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <!-- Counter Up -->
+                                <div class="single-counter text-center">
+                                    <span class="counter color-green">250</span>
+                                    <span class="plus">+</span>
+                                    <p class="color-green">Schools Covered</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Count Down End -->
+    <!-- Featured_job_start -->
+    <section class="featured-job-area section-padding30 section-bg2" data-background="/static/assets/img/gallery/section_bg03.png">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-9 col-md-10 col-sm-12">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle text-center mb-80">
+                        <span>YBPF Events</span>
+                        <h2>We arrange many events for Youth Building and Peace</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                {% for e in events %}
+                <div class="col-lg-9 col-md-12">
+                    <!-- single-job-content -->
+                    <div class="single-job-items mb-30">
+                        <div class="job-items">
+                            <div class="company-img">
+                                <a href="/events/{{e.pk}}"><img src="/media/{{e.thumbnail}}" alt="" width = "100"></a>
+                            </div>
+                            <div class="job-tittle">
+                                <a href="/events/{{e.pk}}"><h4>{{e.title}}</h4></a>
+                                <ul>
+                                    <li><i class="far fa-clock"></i>{{e.timestamp}}</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>{{e.venue}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Featured_job_end -->
+    </main>
+    {% endblock body %}
